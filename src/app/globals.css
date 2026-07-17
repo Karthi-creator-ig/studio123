@@ -1,0 +1,58 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 251 16% 13%;
+    --foreground: 0 0% 98%;
+    --card: 251 16% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 251 16% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 247 72% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 251 16% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 251 16% 25%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 214 100% 66%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 251 16% 22%;
+    --input: 251 16% 22%;
+    --ring: 247 72% 63%;
+    --radius: 0.75rem;
+    --sidebar-background: 251 16% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 247 72% 63%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 251 16% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 251 16% 18%;
+    --sidebar-ring: 247 72% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+.glass-panel {
+  @apply bg-card/60 backdrop-blur-md border border-white/5;
+}
+
+.countdown-digit {
+  @apply font-code text-accent font-bold;
+}

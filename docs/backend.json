@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Stores user-specific preferences and profile data.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "homeTimezone": { "type": "string" },
+        "homeCountry": { "type": "string" }
+      }
+    },
+    "Reminder": {
+      "title": "Meeting Reminder",
+      "description": "A scheduled meeting alert with timezone conversion data.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "startTime": { "type": "string" },
+        "timezone": { "type": "string" },
+        "hostCountry": { "type": "string" },
+        "summary": { "type": "string" },
+        "soundId": { "type": "string" },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["title", "startTime", "timezone", "isActive"]
+    }
+  },
+  "auth": {
+    "providers": ["email", "google"]
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "#/backend/entities/UserProfile",
+      "description": "User profile document"
+    },
+    "/users/{userId}/reminders/{reminderId}": {
+      "schema": "#/backend/entities/Reminder",
+      "description": "Collection of meeting reminders for a specific user"
+    }
+  }
+}

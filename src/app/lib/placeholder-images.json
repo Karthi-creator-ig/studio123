@@ -1,0 +1,11 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-global",
+      "description": "Abstract representation of global connectivity and time zones",
+      "imageUrl": "https://picsum.photos/seed/globalcue/1200/600",
+      "imageHint": "global network time"
+    }
+  ]
+}
